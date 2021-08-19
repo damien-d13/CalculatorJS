@@ -169,8 +169,8 @@ divRowBtn5.appendChild(btnEquals);
 window.addEventListener("load", (event) => {
   //Take the button for add Event and CSS
   var btns = document.getElementsByName("btn");
-  var btnR = document.getElementById("delete");
-  var btnEf = document.getElementById("btn-reset");
+  var btnR = document.getElementById("btn-reset");
+  var btnEf = document.getElementById("delete");
 
   var btnEg = document.getElementById("equals");
   console.log(btns.length);
