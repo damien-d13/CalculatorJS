@@ -15,4 +15,4 @@ And don't forget to add the script for example :
  <script src="CalculatorJs/calculator.js"></script> 
  ```
 
- ![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+ ![Image of Yaktocat](https://github.com/damien-d13/CalculatorJS/blob/main/image/CalculatorJS.PNG)
