@@ -1,3 +1,8 @@
+/**
+ * Calculator full Javascript vanilla
+ * Authors : Damien Devoti
+ */
+
 /** take the Element id calculator in the html document */
 var calculator = document.getElementById("calculator");
 
