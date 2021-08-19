@@ -159,24 +159,20 @@ btnEquals.innerHTML = "=";
 btnEquals.setAttribute("value", "=");
 divRowBtn5.appendChild(btnEquals);
 
-
-
-
-
-
-
 /** Calcul and Event function */
 window.addEventListener("load", (event) => {
   //Take the button for add Event and CSS
   var btns = document.getElementsByName("btn");
+
+  var btnStyle = document.querySelectorAll(".button");
+
   var btnR = document.getElementById("btn-reset");
   var btnEf = document.getElementById("delete");
-
   var btnEg = document.getElementById("equals");
-  console.log(btns.length);
+  console.log(btnStyle.length);
   // INPUT
   var txt = document.getElementById("input");
-  
+
   console.log("hello");
   //Function display
   for (let i = 0; i < btns.length; i++) {
@@ -199,22 +195,19 @@ window.addEventListener("load", (event) => {
     txt.value = eval(txt.value);
   });
 
+  /**  Add CSS */
+  calculator.style.border = "thick outset white";
+  calculator.style.width = "208px";
+  calculator.style.boxShadow = "5px 10px 15px black";
 
-/**  Add CSS */
+  for (let index = 0; index < btnStyle.length; index++) {
+    btnStyle[index].style.width = "50px";
+    btnStyle[index].style.margin = "1px";
+    btnStyle[index].style.boxShadow = "1px 2px 3px black";
+  }
 
-for (let index = 0; index < btns.length; index++) {
-    btns[index].style.width = "50px";
-    btns[index].style.marginRight = "2px";
-
-}
-btnR.style.width = "50px";
-btnR.style.marginRight = "2px";
-btnEf.style.width = "50px";
-btnEf.style.marginRight = "2px";
-btnEg.style.width = "50px";
-btnEg.style.marginRight = "2px";
-txt.style.width = "200px";
-txt.style.marginRight = "2px";
-
-
+  txt.style.width = "198px";
+  txt.style.margin = "1px";
+  txt.style.boxShadow = "1px 2px 3px black";
+  
 });
