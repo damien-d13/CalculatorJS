@@ -50,6 +50,7 @@ btnDivide.setAttribute("name", "btn");
 divRowBtn1.appendChild(btnDivide);
 var btnPercent = document.createElement("button");
 btnPercent.classList.add("button");
+btnPercent.id = "percent";
 btnPercent.innerHTML = "%";
 btnPercent.setAttribute("value", "%");
 btnPercent.setAttribute("name", "btn");
@@ -163,12 +164,12 @@ divRowBtn5.appendChild(btnEquals);
 window.addEventListener("load", (event) => {
   //Take the button for add Event and CSS
   var btns = document.getElementsByName("btn");
-
   var btnStyle = document.querySelectorAll(".button");
 
-  var btnR = document.getElementById("btn-reset");
-  var btnEf = document.getElementById("delete");
-  var btnEg = document.getElementById("equals");
+  var btnPercent = document.getElementById("percent");
+  var btnReset = document.getElementById("btn-reset");
+  varDelete = document.getElementById("delete");
+  var btnEquals = document.getElementById("equals");
   console.log(btnStyle.length);
   // INPUT
   var txt = document.getElementById("input");
@@ -176,24 +177,39 @@ window.addEventListener("load", (event) => {
   console.log("hello");
   //Function display
   for (let i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function () {
+    btns[i].addEventListener("click", function (event) {
+      var targetElement = event.target.value;
+      console.log(targetElement);
+      console.log(txt.value);
       console.log(i);
-      console.log("hello");
       txt.value += this.value;
     });
   }
   // Function delete all
-  btnR.addEventListener("click", function () {
+  btnReset.addEventListener("click", function () {
     txt.value = "";
   });
   // Function delete one by one
-  btnEf.addEventListener("click", function () {
+  btnDelete.addEventListener("click", function () {
     txt.value = txt.value.substring(0, txt.value.length - 1);
   });
   // Function evaluation
-  btnEg.addEventListener("click", function () {
-    txt.value = eval(txt.value);
+  btnEquals.addEventListener("click", function () {
+    if (txt.value.includes("%")) {
+      resultPercent();
+    } else {
+      txt.value = eval(txt.value);
+    }
   });
+
+  //  Function calcul percent
+  function resultPercent() {
+    var fields = txt.value.split("%");
+    var fieldLeft = eval(fields[0]);
+    var fieldsRight = eval(fields[1]);
+    console.log(fieldLeft + " " + fieldsRight);
+    txt.value = eval(fieldsRight * (fieldLeft / 100));
+  }
 
   /**  Add CSS */
   calculator.style.border = "thick outset white";
@@ -209,5 +225,4 @@ window.addEventListener("load", (event) => {
   txt.style.width = "198px";
   txt.style.margin = "1px";
   txt.style.boxShadow = "1px 2px 3px black";
-  
 });
