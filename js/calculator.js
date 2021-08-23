@@ -8,9 +8,10 @@ var calculator = document.getElementById("calculator");
 
 /** Create node for Button and Input */
 var rowInput = document.createElement("article");
-calculator.appendChild(rowInput);
+//Add appendChild at the end of code for one generate the view
+// calculator.appendChild(rowInput);
 var rowBtn = document.createElement("article");
-calculator.appendChild(rowBtn);
+// calculator.appendChild(rowBtn);
 
 /** Create Row for Button */
 var divRowBtn1 = document.createElement("div");
@@ -159,6 +160,11 @@ btnEquals.classList.add("button");
 btnEquals.innerHTML = "=";
 btnEquals.setAttribute("value", "=");
 divRowBtn5.appendChild(btnEquals);
+
+/** Add Appenchild root Element at the end of the view element */
+calculator.appendChild(rowInput);
+calculator.appendChild(rowBtn);
+
 
 /** Calcul and Event function */
 window.addEventListener("load", (event) => {
